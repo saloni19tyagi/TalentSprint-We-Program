@@ -52,7 +52,7 @@ vector<pair<int, int> >termius(int x , int y  , vector<string>points) {
 int main() {
 	
 	vector<string>points ;
-    points.push_back("1NE") ;
+    points.push_back("1N") ;
     points.push_back("3NW");
 
     vector<pair<int, int> >final_point = termius(1, 1, points);
