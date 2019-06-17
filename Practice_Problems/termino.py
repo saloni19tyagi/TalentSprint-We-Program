@@ -1,6 +1,8 @@
 DIR = {"N" :(0, 1),"S" :(0, -1) ,"E" :(1, 0) ,"W":(-1,0) ,"NE" :(1,1) ,"NW" :(-1, 1) ,"SE" :(1,-1) ,"SW" :(-1,-1)}
 
-def termino(x, y , directions) :
+def termino(coordinate, directions) :
+    x = coordinate[0] 
+    y = coordinate[1]
     for i in directions :
         dir = ""
         digit = 0
@@ -15,5 +17,5 @@ def termino(x, y , directions) :
         y = y + y1*digit
     return x , y
 li = ["1N" , "3NW"]
-x , y = termino(1, 1,li )
+x , y = termino((1, 1),li )
 print((x , y))
