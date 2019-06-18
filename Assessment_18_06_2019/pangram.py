@@ -4,7 +4,6 @@ letter_count = dict(zip(string.ascii_lowercase, [0]*26))
 def is_pangram(s) :
     for ch in s: 
         letter_count[ch] = letter_count.get(ch, 0) + 1
-    print(letter_count)
     for count in letter_count :
         if count == 0 :
             return 0
