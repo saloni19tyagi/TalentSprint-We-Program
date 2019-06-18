@@ -5,7 +5,7 @@ def is_pangram(s) :
     for ch in s: 
         letter_count[ch] = letter_count.get(ch, 0) + 1
     for count in letter_count :
-        if count == 0 :
+        if letter_count[count] == 0 :
             return 0
 
     return 1
