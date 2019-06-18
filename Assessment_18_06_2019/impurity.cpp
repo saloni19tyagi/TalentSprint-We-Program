@@ -17,7 +17,7 @@ int CalculateImpurityIndex(string str) {
         else if(freq[i] > 2)    
             impurity_index += 1;
         else if(freq[i] == 2){
-            if(i == 1 || i == 5 || i == 9 || i == 15 || i == 21)
+            if(i == 0 || i == 4 || i == 8 || i == 14 || i == 20)
                 impurity_index += (0.5);
             else
                 impurity_index += (0.7);
