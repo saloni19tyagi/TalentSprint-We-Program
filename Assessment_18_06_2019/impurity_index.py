@@ -12,7 +12,7 @@ def CalculateImpurityIndex(s) :
         elif letter_count[count] > 2 :
             impurity += 2
         elif letter_count[count] == 2 :
-            if letter_count in ('a' , 'e' , 'i' , 'o' , 'u') :
+            if count in ('a' , 'e' , 'i' , 'o' , 'u') :
                 impurity += (0.5)
             else :
                 impurity += (0.7)
