@@ -1,0 +1,54 @@
+#include<iostream>
+
+using namespace std ;
+
+int mapping_char(char ch){
+    if (ch == 'I')
+        return 1;
+    if (ch == 'V')
+        return 5;
+    if (ch == 'X')
+        return 10;
+    if (ch == 'L')
+        return 50;
+    if (ch == 'C')
+        return 100;
+    if (ch == 'D')
+        return 500;
+    if (ch == 'M')
+        return 1000;
+
+    return -1 ;
+}
+
+int generate_decimal_num(int map_char[] , int len) {
+    int decimal_num = map_char[len - 1];
+    
+    for (int i = len - 1; i > 0; i--) {
+        if(map_char[i] > map_char[i-1])
+            decimal_num = decimal_num - map_char[i - 1];
+        else
+            decimal_num = decimal_num + map_char[i - 1];
+    }
+    return decimal_num;
+}
+
+
+int roman_to_arabic(string roman_num) {
+    int len = roman_num.size(), map_char[30]= {0};
+    
+    for (int i = 0; i < len; i++){
+        map_char[i] = mapping_char(roman_num[i]);
+    }
+
+    return generate_decimal_num(map_char, len);
+}
+
+
+int main() {
+    string roman_num;
+    cin >> roman_num;
+
+    int decimal_num = roman_to_arabic(roman_num);
+    cout << decimal_num << "\n";
+}
